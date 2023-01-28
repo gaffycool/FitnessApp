@@ -14,6 +14,11 @@
 - Unit tests for ViewModels
 - Unit tests for Repositories
 
+**Video**
+
+
+
+
 **Justification on tech used**
 
 **Why Promoting MVVM VS MVP:**
