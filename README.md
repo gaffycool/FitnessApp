@@ -2,13 +2,16 @@
 
 - Architecture used: MVVM (Model-View-ViewModel), Clean code architecture (adhering to uncle bob and Solid Principle),
   Clean code using feature package separation, Repository rule implementation
-- Technologies used: Kotlin, Kotlin Coroutines, Jetpack Compose, Retrofit, Hilt, Room DB for offline caching/favoriting 
+- Technologies used: Kotlin, Kotlin Coroutines, Jetpack Compose, Retrofit, Hilt, Room Datebase for offline caching/favoriting 
 - Unit test: JUnit, MockK
 
 **How to use**
 - Re-sync gradle and Install, launch the app in emulator that has SDK 33
 - Search for the muscle 
 - See a list of results returned from the API
+- Expand/Collapse each box to see images of the muscle 
+- Hit the heart button to favourite the exercise so this can be viewed later
+- View saved exercises with no internet connection (app persistence / offline caching using Room DB)
 
 **Unit tests**
 - Unit tests for ViewModels
