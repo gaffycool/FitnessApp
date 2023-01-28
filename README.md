@@ -9,7 +9,7 @@
 - Re-sync gradle and Install, launch the app in emulator that has SDK 33
 - Search for the muscle 
 - See a list of results returned from the API
-- Expand/Collapse each box to see images of the muscle 
+- Expand/Collapse each box to see images of the muscle and the description of the exercise
 - Hit the heart button to favourite the exercise so this can be viewed later
 - View saved exercises with no internet connection (app persistence / offline caching using Room DB)
 
