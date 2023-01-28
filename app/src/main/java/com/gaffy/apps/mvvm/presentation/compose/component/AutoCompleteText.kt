@@ -2,20 +2,14 @@ package com.gaffy.apps.mvvm.presentation.compose.component
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.DropdownMenuItem
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.ExposedDropdownMenuBox
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,15 +19,16 @@ import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.PopupProperties
 import com.gaffy.apps.R
 import com.gaffy.apps.mvvm.domain.model.MuscleModel
 import com.gaffy.apps.mvvm.presentation.compose.theme.space8
 
-@OptIn(ExperimentalMaterialApi::class, ExperimentalComposeUiApi::class)
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun AutoCompleteText(
     @StringRes label: Int,
-    value: String,
     showDropDown: Boolean,
     filterOpts: List<MuscleModel>,
     onValueChange: (String) -> Unit,
@@ -41,10 +36,12 @@ fun AutoCompleteText(
     onDismissMenu: () -> Unit = {}
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
-    ExposedDropdownMenuBox(expanded = showDropDown, onExpandedChange = { }) {
+    val textState = remember { mutableStateOf(TextFieldValue()) }
+    Column {
         TextField(
-            value = TextFieldValue(value, selection = TextRange(value.length)),
+            value = textState.value,
             onValueChange = {
+                textState.value = it
                 onValueChange(it.text)
             },
             placeholder = { Text(stringResource(id = label)) },
@@ -56,7 +53,7 @@ fun AutoCompleteText(
             ),
             trailingIcon = {
                 IconButton(
-                    onClick = { onValueChange("") },
+                    onClick = { textState.value = textState.value.copy(text = "") },
                     modifier = Modifier.clearAndSetSemantics { }) {
                     Icon(
                         Icons.Filled.Clear,
@@ -71,14 +68,22 @@ fun AutoCompleteText(
                     shape = RoundedCornerShape(space8)
                 )
         )
-        ExposedDropdownMenu(expanded = showDropDown, onDismissRequest = onDismissMenu) {
+        DropdownMenu(
+            expanded = showDropDown,
+            onDismissRequest = onDismissMenu,
+            modifier = Modifier
+                .heightIn(max = 200.dp),
+            properties = PopupProperties(focusable = false, usePlatformDefaultWidth = false)
+        ) {
             filterOpts.forEach { option ->
-                DropdownMenuItem(
-                    onClick = {
-                        keyboardController?.hide()
-                        onItemSelect(option)
-                    }
-                ) {
+                DropdownMenuItem(onClick = {
+                    keyboardController?.hide()
+                    onItemSelect(option)
+                    textState.value = textState.value.copy(
+                        text = option.name,
+                        selection = TextRange(option.name.length)
+                    )
+                }) {
                     Text(
                         text = option.name,
                         style = MaterialTheme.typography.body2,
@@ -90,21 +95,16 @@ fun AutoCompleteText(
 }
 
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun AutoCompleteTextPreview() {
     val model = MuscleModel(1, "Biceps", false, "", "")
-    AutoCompleteText(
-        label = R.string.exercise_label,
-        value = "Search Value",
+    AutoCompleteText(label = R.string.exercise_label,
         showDropDown = true,
         filterOpts = listOf(
-            model,
-            model.copy(name = "Triceps"),
-            model.copy(name = "Chest")
+            model, model.copy(name = "Triceps"), model.copy(name = "Chest")
         ),
         onValueChange = {},
         onItemSelect = { },
-        onDismissMenu = {}
-    )
+        onDismissMenu = {})
 }

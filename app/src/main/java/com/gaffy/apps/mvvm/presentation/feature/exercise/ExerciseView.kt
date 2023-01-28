@@ -34,7 +34,6 @@ fun ExerciseView(
         ) {
             AutoCompleteText(
                 label = R.string.exercise_label,
-                value = vmState.searchValue,
                 showDropDown = vmState.showDropdownMenu,
                 filterOpts = vmState.searchedMuscle(),
                 onValueChange = onValueChange,
