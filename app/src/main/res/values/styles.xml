@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- To see how these attributes are used, please visit https://material.io/develop/android/theming/color/ -->
+    <style name="Base.Theme.MvvmApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/mvvmapp_green_500</item>
+        <item name="colorPrimaryVariant">@color/mvvmapp_green_700</item>
+        <item name="colorOnPrimary">@color/mvvmapp_yellow_500</item>
+        <item name="colorPrimaryDark">@color/mvvmapp_green_700</item>
+        <item name="colorOnSurface">@color/mvvmapp_black</item>
+        <item name="colorAccent">@color/mvvmapp_green_700</item>
+        <item name="colorSurface">@color/mvvmapp_gray_50</item>
+        <item name="colorSecondary">@color/mvvmapp_yellow_500</item>
+        <item name="android:colorBackground">@color/mvvmapp_green_500</item>
+    </style>
+
+    <style name="Theme.MvvmApp" parent="Base.Theme.MvvmApp" />
+
+    <style name="Theme.MvvmApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="Theme.MvvmApp.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="TextAppearance.MvvmApp.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+</resources>

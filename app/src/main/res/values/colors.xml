@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="mvvmapp_black">#de000000</color>
+    <color name="mvvmapp_gray_50">#fafafa</color>
+    <color name="mvvmapp_gray_50_a600">#99fafafa</color>
+    <color name="mvvmapp_green_300">#4D1565C0</color>
+    <color name="mvvmapp_green_500">#801565C0</color>
+    <color name="mvvmapp_green_700">#B31565C0</color>
+    <color name="mvvmapp_green_900">#E61565C0</color>
+    <color name="mvvmapp_white">#deffffff</color>
+    <color name="mvvmapp_yellow_300">#f8f99f</color>
+    <color name="mvvmapp_yellow_500">#ffff63</color>
+</resources>

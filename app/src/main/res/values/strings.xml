@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Resources that do not require translation -->
+    <string name="app_name" translatable="false">FitnessApp</string>
+    <string name="exercise">Exercise</string>
+    <string name="favorite">Favorite</string>
+
+    <!-- Translatable resources -->
+
+    <string name="exercise_label">Search Your Muscle To Build</string>
+    <string name="favorite_empty_title">Not favorite exercises available</string>
+</resources>

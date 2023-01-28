@@ -2,7 +2,7 @@
 
 - Architecture used: MVVM (Model-View-ViewModel), Clean code architecture (adhering to uncle bob and Solid Principle),
   Clean code using feature package separation, Repository rule implementation
-- Technologies used: Kotlin, Kotlin Coroutines, Jetpack Compose, Retrofit, Hilt
+- Technologies used: Kotlin, Kotlin Coroutines, Jetpack Compose, Retrofit, Hilt, Room DB for offline caching/favoriting 
 - Unit test: JUnit, MockK
 
 **How to use**
@@ -12,7 +12,7 @@
 
 **Unit tests**
 - Unit tests for ViewModels
-- Unit tests for Repositories 
+- Unit tests for Repositories
 
 **Justification on tech used**
 
