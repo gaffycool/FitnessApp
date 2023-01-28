@@ -1,9 +1,9 @@
 **Fitness Application Test**
 
-- Architecture used: MVVM (Model-View-ViewModel), Clean code architecture (adhering to uncle bob and Solid Principle),
+- **Architecture used:** MVVM (Model-View-ViewModel), Clean code architecture (adhering to uncle bob and Solid Principle),
   Clean code using feature package separation, Repository rule implementation
-- Technologies used: Kotlin, Kotlin Coroutines, Jetpack Compose, Retrofit, Hilt, Room Datebase for offline caching/favoriting 
-- Unit test: JUnit, MockK
+- **Technologies used:** Kotlin, Kotlin Coroutines, Jetpack Compose, Retrofit, Hilt, Room Datebase for offline caching/favoriting 
+- **Unit test:** JUnit, MockK
 
 **How to use**
 - Re-sync gradle and Install, launch the app in emulator that has SDK 33
