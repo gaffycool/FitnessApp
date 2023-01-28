@@ -14,6 +14,16 @@
 - Unit tests for ViewModels
 - Unit tests for Repositories
 
+**Screenshots**
+
+![Screenshot_1674902852](https://user-images.githubusercontent.com/8558432/215262582-040b4d35-d732-4fcd-a0a0-dcf1768378e5.png)
+![Screenshot_1674902882](https://user-images.githubusercontent.com/8558432/215262577-07e08a4a-b41f-4518-8e4a-24f3e992d4f2.png)
+![Screenshot_1674902890](https://user-images.githubusercontent.com/8558432/215262576-b5d6aa3c-32ea-43d5-aabc-321c8ddeaf43.png)
+![Screenshot_1674902893](https://user-images.githubusercontent.com/8558432/215262574-6fc8b7c9-9306-47a4-9841-030b0fb3923f.png)
+![Screenshot_1674902899](https://user-images.githubusercontent.com/8558432/215262571-66ef2bc0-a477-42ea-b19c-dc3159b4a732.png)
+
+
+
 **Justification on tech used**
 
 **Why Promoting MVVM VS MVP:**
